@@ -65,5 +65,5 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.font: xft:Anonymice Nerd Font:size=14:style=Regular,Book
+URxvt.font: xft:Anonymice Nerd Font Mono:pixelsize=25:style=Regular
 URxvt.letterSpace: 1
