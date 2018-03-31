@@ -1,0 +1,146 @@
+[colors]
+background = #eee8d5
+foreground = #657b83
+secondary = #e60053
+yellow =    #b58900
+orange =    #cb4b16
+red =       #dc322f
+magenta =   #d33682
+violet =    #6c71c4
+blue =      #268bd2
+cyan =      #2aa198
+green =     #859900
+
+[bar/top]
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = Anonymice Nerd Font:size=12
+
+modules-left = i3  
+modules-right = memory temperature battery wireless volume backlight xkeyboard date
+tray-position = right
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix = " "
+
+[module/i3]
+type = internal/i3
+label-focused = %index%
+label-focused-foreground = ${colors.yellow}
+label-focused-underline = ${colors.yellow}
+label-focused-padding = 2
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp><label>
+label = %percentage:3%%
+enable-scroll = true
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/memory]
+type = internal/memory
+interval = 3
+format-prefix = " "
+label = %gb_used:3%/%gb_total:3%
+
+[module/wireless]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+label-connected = %essid%
+
+[module/date]
+type = internal/date
+interval = 5
+date = " %A, %B %d"
+date-alt = " %Y-%m-%d"
+time = %H:%M
+time-alt = %H:%M:%S
+;format-prefix = 
+format-background = #fdf6e3
+format-padding = 2
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+master-soundcard = hw:1
+speaker-soundcard = hw:1
+headphone-soundcard = hw:1
+master-mixer = Master
+mapping = false
+format-volume = <ramp-volume><label-volume>
+label-volume = %percentage:4%%
+label-muted = 婢 Mute
+label-muted-foreground = #66
+ramp-volume-0 = 墳
+;ramp-volume-0 = 奄
+;ramp-volume-1 = 奔
+;ramp-volume-2 = 墳
+
+[module/battery]
+type = internal/battery
+full-at = 99
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = Charging %percentage:3%%
+label-discharging = %percentage:3%%
+label-full = Fully charged
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.red}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
