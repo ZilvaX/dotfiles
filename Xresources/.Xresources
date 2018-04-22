@@ -60,7 +60,7 @@
 URxvt*scrollBar: false
 URxvt.intensityStyles: false
 URxvt*depth: 32
-URxvt*background: [90]#fdf6e3
+URxvt*background: #fdf6e3
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.iso14755: false
