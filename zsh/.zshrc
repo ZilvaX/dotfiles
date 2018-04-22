@@ -21,24 +21,32 @@ source ~/.aliases
 # Environment Variables
 source ~/.variables
 
-# Load antigen
-source ~/antigen.zsh
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+### zplug ###
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
+fi
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-#antigen bundle heroku
-#antigen bundle pip
-#antigen bundle lein
-#antigen bundle command-not-found
+source ~/.zplug/init.zsh
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+zplug "modules/completion", from:prezto
+zplug "modules/directory", from:prezto
+zplug "modules/git", from:prezto
 
-# Load the theme.
-antigen theme dannynimmo/punctual-zsh-theme punctual
+# Syntax Highlighting
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Tell Antigen that you're done.
-antigen apply
+# Load theme file
+zplug 'dannynimmo/punctual-zsh-theme', as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
