@@ -15,12 +15,15 @@ compinit
 autoload -Uz promptinit
 promptinit
 
+# Support for Bash autocomplete
+autoload -Uz bashcompinit
+bashcompinit -i
+
 # Aliases
 source ~/.aliases
 
 # Environment Variables
 source ~/.variables
-
 
 ### zplug ###
 # Check if zplug is installed
