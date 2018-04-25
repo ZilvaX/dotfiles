@@ -39,6 +39,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'romainl/flattened'
 " Javascript
 Plug 'pangloss/vim-javascript'
+" Grepping
+Plug 'wincent/ferret'
 call plug#end()
 
 " Airline Configurations
