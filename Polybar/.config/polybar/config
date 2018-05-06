@@ -1,6 +1,6 @@
 [colors]
-background = #eee8d5
-foreground = #657b83
+background = #96000000
+foreground = #ffffff
 secondary = #e60053
 yellow =    #b58900
 orange =    #cb4b16
@@ -19,16 +19,17 @@ line-size = 4
 
 module-margin-left = 2
 module-margin-right = 2
+padding-right = 2
 
 font-0 = Anonymice Nerd Font:size=12
 
-modules-left = i3  
-modules-right = memory temperature battery wireless volume backlight xkeyboard date
-tray-position = right
+modules-left = i3 xwindow
+modules-center = date
+modules-right = wireless battery volume backlight
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -38,11 +39,10 @@ format-prefix = " "
 [module/i3]
 type = internal/i3
 label-focused = %index%
-label-focused-foreground = ${colors.yellow}
-label-focused-underline = ${colors.yellow}
-label-focused-padding = 2
+label-focused-background = ${colors.blue}
+label-focused-padding = 1.5
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 1.5
 
 [module/backlight]
 type = internal/backlight
@@ -69,12 +69,13 @@ label-connected = %essid%
 [module/date]
 type = internal/date
 interval = 5
-date = " %A, %B %d"
+;date = " %A, %B %d"
+date = "%A"
 date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 ;format-prefix = 
-format-background = #fdf6e3
+;format-background = #fdf6e3
 format-padding = 2
 label = %date% %time%
 
