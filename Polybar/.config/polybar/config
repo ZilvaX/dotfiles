@@ -20,6 +20,7 @@ line-size = 4
 module-margin-left = 2
 module-margin-right = 2
 padding-right = 2
+fixed-center = true
 
 font-0 = Anonymice Nerd Font:size=12
 
