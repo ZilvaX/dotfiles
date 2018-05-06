@@ -71,13 +71,10 @@ label-connected = %essid%
 [module/date]
 type = internal/date
 interval = 5
-;date = " %A, %B %d"
 date = "%A"
 date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
-;format-prefix = 
-;format-background = #fdf6e3
 format-padding = 2
 label = %date% %time%
 
@@ -93,9 +90,6 @@ label-volume = %percentage:4%%
 label-muted = 婢 Mute
 label-muted-foreground = #66
 ramp-volume-0 = 墳
-;ramp-volume-0 = 奄
-;ramp-volume-1 = 奔
-;ramp-volume-2 = 墳
 
 [module/battery]
 type = internal/battery
