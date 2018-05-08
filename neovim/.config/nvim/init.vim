@@ -31,27 +31,32 @@ nnoremap <C-H> <C-W><C-H>
 set nu
 
 "" Plugins
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-sensible'
-" Vim Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'romainl/flattened'
-" Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-" Grepping
-Plug 'wincent/ferret'
-" Editor Configurations
-Plug 'editorconfig/editorconfig-vim'
-call plug#end()
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'tpope/vim-sensible'
+  " Vim Airline
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'romainl/flattened'
+  " Javascript
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+  " Grepping
+  Plug 'wincent/ferret'
+  " Editor Configurations
+  Plug 'editorconfig/editorconfig-vim'
+  call plug#end()
 
-" Airline Configurations
-let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#buffer_nr_show = 1
+  " Airline Configurations
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme='solarized'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#buffer_nr_show = 1
 
-" Solarized Theme
-colorscheme flattened_light 
+  " JSX support in .js file extensions
+  let g:jsx_ext_required = 0
+
+  " Solarized Theme
+  colorscheme flattened_light 
+endif
