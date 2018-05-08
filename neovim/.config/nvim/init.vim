@@ -45,6 +45,8 @@ if has('nvim')
   Plug 'wincent/ferret'
   " Editor Configurations
   Plug 'editorconfig/editorconfig-vim'
+  " NERDTree
+  Plug 'scrooloose/nerdtree'
   call plug#end()
 
   " Airline Configurations
