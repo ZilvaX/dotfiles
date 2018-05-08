@@ -42,6 +42,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 " Grepping
 Plug 'wincent/ferret'
+" Editor Configurations
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " Airline Configurations
