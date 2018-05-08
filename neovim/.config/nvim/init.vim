@@ -59,4 +59,7 @@ if has('nvim')
 
   " Solarized Theme
   colorscheme flattened_light 
+
+  " NERDTree Hot key
+  map <C-n> :NERDTreeToggle<CR>
 endif
