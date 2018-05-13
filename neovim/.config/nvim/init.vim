@@ -47,6 +47,8 @@ if has('nvim')
   Plug 'editorconfig/editorconfig-vim'
   " NERDTree
   Plug 'scrooloose/nerdtree'
+  " Lint Engine
+  Plug 'w0rp/ale'
   call plug#end()
 
   " Airline Configurations
@@ -64,4 +66,9 @@ if has('nvim')
 
   " NERDTree Hot key
   map <C-n> :NERDTreeToggle<CR>
+
+  " ALE Fix configuration
+  let g:ale_fixers = {
+        \   'javascript': ['eslint'],
+        \}
 endif
