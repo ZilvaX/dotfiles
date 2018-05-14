@@ -30,6 +30,10 @@ nnoremap <C-H> <C-W><C-H>
 " Show the line numbers
 set nu
 
+" Wildmenu
+set wildmenu
+set wildmode=longest:full,full
+
 "" Plugins
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
