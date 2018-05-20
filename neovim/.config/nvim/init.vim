@@ -15,7 +15,7 @@ set hidden
 syntax enable
 
 " Set the working directory to wherever the open file lives
-set autochdir
+" set autochdir
 
 " Natural splitting
 set splitbelow
