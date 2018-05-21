@@ -1,6 +1,6 @@
 [colors]
-background = #C8383c4a
-foreground = #ffffff
+background = #DCffffff
+foreground = #000000
 secondary = #e60053
 yellow =    #b58900
 orange =    #cb4b16
