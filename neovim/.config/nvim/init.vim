@@ -34,6 +34,9 @@ set nu
 set wildmenu
 set wildmode=longest:full,full
 
+" Shortcut for listing buffers and inserting :b
+map <Leader>b :ls<CR>:b
+
 "" Plugins
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
@@ -75,4 +78,10 @@ if has('nvim')
   let g:ale_fixers = {
         \   'javascript': ['eslint'],
         \}
+  " ALE Fix Leader shortcut
+  map <Leader>F :ALEFix<CR>
+
+  " Shortcut to close quickfix
+  map <Leader>Q :ccl<CR>
+
 endif
