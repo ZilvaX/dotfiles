@@ -56,6 +56,8 @@ if has('nvim')
   Plug 'scrooloose/nerdtree'
   " Lint Engine
   Plug 'w0rp/ale'
+  " Typescript
+  Plug 'https://github.com/HerringtonDarkholme/yats.vim'
   call plug#end()
 
   " Airline Configurations
@@ -77,6 +79,7 @@ if has('nvim')
   " ALE Fix configuration
   let g:ale_fixers = {
         \   'javascript': ['eslint'],
+        \   'typescript': ['eslint'],
         \}
   " ALE Fix Leader shortcut
   map <Leader>F :ALEFix<CR>
