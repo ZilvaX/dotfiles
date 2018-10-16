@@ -51,6 +51,9 @@ fi
 # Background Image
 ~/.fehbg &
 
+# Redshift
+redshift &
+
 # Caps to Left Control
 setxkbmap -option ctrl:nocaps
 
