@@ -25,6 +25,10 @@ source ~/.aliases
 # Environment Variables
 source ~/.variables
 
+# Binding ctrl + directions
+bindkey  "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 ### zplug ###
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
