@@ -79,7 +79,7 @@ if has('nvim')
   " ALE Fix configuration
   let g:ale_fixers = {
         \   'javascript': ['eslint'],
-        \   'typescript': ['eslint'],
+        \   'typescript': ['tslint'],
         \}
   " ALE Fix Leader shortcut
   map <Leader>F :ALEFix<CR>
