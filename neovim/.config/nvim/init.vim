@@ -37,6 +37,12 @@ set wildmode=longest:full,full
 " Shortcut for listing buffers and inserting :b
 map <Leader>b :ls<CR>:b
 
+" True colour support
+set termguicolors
+
+" Background colour for Solarized8
+set background=light
+
 "" Plugins
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
@@ -58,6 +64,8 @@ if has('nvim')
   Plug 'w0rp/ale'
   " Typescript
   Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+  " Solarized 8
+  Plug 'lifepillar/vim-solarized8'
   call plug#end()
 
   " Airline Configurations
@@ -71,7 +79,7 @@ if has('nvim')
   let g:jsx_ext_required = 0
 
   " Solarized Theme
-  colorscheme flattened_light 
+  colorscheme solarized8
 
   " NERDTree Hot key
   map <C-n> :NERDTreeToggle<CR>
