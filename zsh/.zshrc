@@ -29,6 +29,12 @@ source ~/.variables
 bindkey  "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+# tmux startup
+# https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
 ### zplug ###
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
