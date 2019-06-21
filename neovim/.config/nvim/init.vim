@@ -66,6 +66,9 @@ if has('nvim')
   Plug 'https://github.com/HerringtonDarkholme/yats.vim'
   " Solarized 8
   Plug 'lifepillar/vim-solarized8'
+
+  " SparQL
+  Plug 'https://github.com/rvesse/vim-sparql'
   call plug#end()
 
   " Airline Configurations
