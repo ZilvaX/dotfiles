@@ -43,6 +43,10 @@ set termguicolors
 " Background colour for Solarized8
 set background=light
 
+" Prevent crontab editing in place
+" https://www.calebthompson.io/crontab-and-vim-sitting-in-a-tree
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 "" Plugins
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
