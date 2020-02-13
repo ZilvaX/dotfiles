@@ -73,7 +73,11 @@ if has('nvim')
 
   " SparQL
   Plug 'https://github.com/rvesse/vim-sparql'
+
+  " Rainbow brackets
+  Plug 'junegunn/rainbow_parentheses.vim'
   call plug#end()
+
 
   " Airline Configurations
   let g:airline_powerline_fonts = 1
