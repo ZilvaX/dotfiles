@@ -68,7 +68,7 @@ if has('nvim')
   " NERDTree
   Plug 'scrooloose/nerdtree'
   " Lint Engine
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
   " Typescript
   Plug 'https://github.com/HerringtonDarkholme/yats.vim'
   " Solarized 8
