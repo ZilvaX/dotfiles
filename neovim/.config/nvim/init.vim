@@ -47,6 +47,9 @@ set background=light
 " https://www.calebthompson.io/crontab-and-vim-sitting-in-a-tree
 autocmd filetype crontab setlocal nobackup nowritebackup
 
+" Sets text width to 80 for markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 "" Plugins
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
