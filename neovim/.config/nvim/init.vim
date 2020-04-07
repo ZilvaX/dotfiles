@@ -32,7 +32,7 @@ set nu
 
 " Wildmenu
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,list,full
 
 " Shortcut for listing buffers and inserting :b
 map <Leader>b :ls<CR>:b
@@ -48,7 +48,10 @@ set background=light
 autocmd filetype crontab setlocal nobackup nowritebackup
 
 " Sets text width to 80 for markdown
-au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.md setlocal textwidth=80 spell
+
+" Allows CTRL-N and CTRL-P to autocomplete words
+set complete+=kspell
 
 "" Plugins
 if has('nvim')
