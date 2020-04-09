@@ -92,6 +92,7 @@ bindsym $mod+a focus parent
 
 # use workspaces on different monitors
 workspace "1: P1" output eDP1
+workspace 1 output primary
 workspace 3 output primary
 workspace 4 output primary
 workspace 1' output HDMI-A-0
@@ -193,7 +194,9 @@ assign [class="idea"] 4
 
 assign [class="firefox"] 1'
 assign [class="discord"] 2'
-assign [class="spotify"] 3'
+# Spotify doesn't seem to have the class on launch
+#assign [class="spotify"] 3'
+for_window [class="Spotify"] move to workspace 3'
 
 # Startup xfce-panel
 #exec --no-startup-id xfce4-panel --disable-wm-check
