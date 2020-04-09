@@ -32,7 +32,7 @@ set nu
 
 " Wildmenu
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,list,full
 
 " Shortcut for listing buffers and inserting :b
 map <Leader>b :ls<CR>:b
@@ -42,6 +42,26 @@ set termguicolors
 
 " Background colour for Solarized8
 set background=light
+
+" Prevent crontab editing in place
+" https://www.calebthompson.io/crontab-and-vim-sitting-in-a-tree
+autocmd filetype crontab setlocal nobackup nowritebackup
+
+" Sets text width to 80 for markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80 spell
+
+" Allows CTRL-N and CTRL-P to autocomplete words
+set complete+=kspell
+
+" Don't mark URL-like things as spelling errors
+syn match UrlNoSpell '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
+
+" Don't count acronyms / abbreviations as spelling errors
+" (all upper-case letters, at least three characters)
+" Also will not count acronym with 's' at the end a spelling error
+" Also will not count numbers that are part of this
+" Recognizes the following as correct:
+syn match AcronymNoSpell '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
 
 "" Plugins
 if has('nvim')
@@ -61,7 +81,7 @@ if has('nvim')
   " NERDTree
   Plug 'scrooloose/nerdtree'
   " Lint Engine
-  Plug 'w0rp/ale'
+  Plug 'dense-analysis/ale'
   " Typescript
   Plug 'https://github.com/HerringtonDarkholme/yats.vim'
   " Solarized 8
@@ -69,7 +89,11 @@ if has('nvim')
 
   " SparQL
   Plug 'https://github.com/rvesse/vim-sparql'
+
+  " Rainbow brackets
+  Plug 'junegunn/rainbow_parentheses.vim'
   call plug#end()
+
 
   " Airline Configurations
   let g:airline_powerline_fonts = 1
